@@ -37,8 +37,9 @@ public class CustomerService
             throw new IllegalStateException("fraudster");
         }
         messageProducer.publish( NotificationRequest.builder()
-                .customerId(customer.getId())
+                .toCustomerId(customer.getId())
                 .toCustomerEmail(customer.getEmail())
+                .sender("System")
                 .message(String.format("Registration completed successfully. Welcome %s!", customer.getFirstName()))
                 .build(),
                 "internal.exchange",

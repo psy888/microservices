@@ -20,7 +20,7 @@ public class NotificationService {
                 .message(notificationRequest.getMessage())
                 .toCustomerId(notificationRequest.getToCustomerId())
                 .toCustomerEmail(notificationRequest.getToCustomerEmail())
-                .sender("System")
+                .sender(notificationRequest.getSender())
                 .build());
 
     }

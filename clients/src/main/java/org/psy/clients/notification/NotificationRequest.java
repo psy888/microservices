@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class NotificationRequest {
-    private Long customerId;
     private String message;
     private Long toCustomerId;
     private String toCustomerEmail;
