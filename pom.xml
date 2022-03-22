@@ -26,11 +26,9 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <spring.boot.maven.plugin>2.6.4</spring.boot.maven.plugin>
+    <spring.boot.maven.plugin.version>3.10.0</spring.boot.maven.plugin.version>
     <spring.boot.dependencies>2.6.4</spring.boot.dependencies>
     <spring.cloud.version>2021.0.1</spring.cloud.version>
-    <spring.cloud.openfeign.version>2.2.10.RELEASE</spring.cloud.openfeign.version>
-    <spring.cloud.sleuth.version>2.2.8.RELEASE</spring.cloud.sleuth.version>
-    <netflix.eureka.client.version>2.2.10.RELEASE</netflix.eureka.client.version>
   </properties>
 
   <dependencyManagement>
@@ -63,13 +61,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <version>${spring.boot.dependencies}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
-      <version>${spring.cloud.openfeign.version}</version>
     </dependency>
   </dependencies>
 
@@ -77,8 +73,8 @@
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
-          <groupId>org.springframwork.boot</groupId>
-          <artifactId>spring-boot-maven-plagin</artifactId>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
           <version>${spring.boot.maven.plugin}</version>
           <executions>
             <execution>
@@ -127,7 +123,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>${spring.boot.maven.plugin.version}</version>
         <configuration>
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
